@@ -12,17 +12,37 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+p {
+  line-height: 1.6;
+}
+
 header {
   width: 100%;
-  background-image: url("hero-banner.jpg");
-  background-color: rgba(0, 0, 0, 0.6);
-  background-blend-mode: darken;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 150px 0;
+  padding: 150px 15px;
   color: white;
   row-gap: 40px;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  position: relative;
+  overflow: hidden;
+}
+
+header #hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(50%);
 }
 
 header h2,
@@ -31,8 +51,9 @@ header h3 {
 }
 
 article {
+  display: flex;
   flex-direction: column;
-  width: 1200px;
+  max-width: 1200px;
   padding: 50px 100px;
   background-color: white;
 }
@@ -47,6 +68,7 @@ article {
 
 #map {
   height: 500px;
+  min-width: 0;
 }
 
 .legend {
@@ -82,4 +104,63 @@ article {
 .legend i.icon {
   background-size: 18px;
   background-color: rgba(255, 255, 255, 1);
+}
+
+.image-with-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.image-with-caption img {
+  max-width: 100%;
+  height: auto;
+}
+
+.roadkill-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: aliceblue;
+}
+
+.roadkill-form label {
+  font-weight: bold;
+}
+
+.roadkill-form .submit {
+  width: fit-content;
+  padding: 4px 8px;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #222;
+  color: white;
+}
+
+@media screen and (max-width: 1199px) {
+  article {
+    flex-direction: column;
+    padding: 50px 100px;
+    background-color: white;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  header h1 {
+    font-size: 24px;
+  }
+  header h2 {
+    font-size: 20px;
+  }
+  header h3 {
+    font-size: 16px;
+  }
 }

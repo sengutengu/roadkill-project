@@ -21,10 +21,18 @@
   </head>
   <body>
     <header>
+      <video autoplay muted loop id="hero-video">
+        <source src="hero-video.mp4" type="video/mp4" />
+      </video>
+
       <h1>Prototype: Roadkill Mapping Through Citizen Science</h1>
-      <h2>ENVS3354: <i>Wildlife and Society</i>, taught by Dr. David Kurz</h2>
-      <h3>
+
+      <h2>
         Teddy Coles, Portia Hartono, Seung-hwan Leo Kim, and Sophie Nygren
+      </h2>
+      <h3>
+        ENVS3354: <i>Wildlife and Society</i>, taught by Dr. David Kurz at
+        Boston College
       </h3>
     </header>
     <article>
@@ -32,13 +40,63 @@
         <h2>Why Track Roadkill?</h2>
         <p>
           Roadkill may be a routine occurrence, but it is not without
-          consequences.
+          consequences. Aside from delivering a pang of sadness or disgust to
+          passing drivers, wildlife-vehicle collisions result in approximately
+          365 million dead vertebrates per year
+          <a
+            href="https://www.fhwa.dot.gov/publications/research/safety/08034/04.cfm"
+            >[1]</a
+          >, and pose significant threats to endangered species. For example,
+          roadkill accounts for 35% of annual deaths in the endangered Florida
+          panthers <a href="https://doi.org/10.7589/0090-3558-38.1.107">[2]</a>,
+          and has resulted in the documented extinction of a local population of
+          quolls in Tasmania, with a new population establishing itself
+          following measures to reduce roadkill
+          <a href="https://doi.org/10.1071/WR98069">[3]</a>. That is, roadkill
+          poses an existential threat to many of our most vulnerable species.
         </p>
+        <p>
+          Moreover, tracking roadkill provides valuable insights for a number of
+          applications. Roadkill data, though biased toward ambulatory species,
+          can elucidate species distributions, population trends, behavioral
+          patterns, and even public health as a low-cost sampling method for
+          environmental contaminants and vector-borne diseases
+          <a href="https://doi.org/10.1007/s10344-019-1357-4">[4]</a>. There is
+          real utility in tracking roadkill.
+        </p>
+        <p>
+          Boston is home to both charismatic and nuisance wildlife, including
+          coyotes, raccoons, rabbits, squirrels, and—who could forget—rats.
+          Whereas rural areas have largely been the subject of previous studies,
+          urban and suburban settings like Boston have not received as much
+          attention. Yet, urban wildlife interact with more humans more
+          frequently and more intimately. This project aims to understand the
+          distribution of roadkill in Boston and its suburbs better, with
+          immediate applications in roadkill reduction and long-term
+          applications in urban ecology.
+        </p>
+        <p>
+          As a roadkill reduction measure, our team has designed a prototype
+          speed bump with an embedded tunnel, meant to both decrease traffic
+          speed and to provide safe passage for small animals seeking to cross
+          the road. We aim to identify roadkill hotspots for non-nuisance
+          species in Boston to trial our speed bumps in.
+        </p>
+
+        <div class="image-with-caption">
+          <img
+            src="speedbumpsimage.jpg"
+            alt="Speed bump with embedded tunnel"
+          />
+          <p class="caption">
+            Speed bump with embedded tunnel (placeholder image).
+          </p>
+        </div>
       </div>
       <div class="section">
         <h2>Roadkill Around Boston</h2>
         <p>
-          Access the data here:
+          Access the raw data here:
           <a
             href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhZdR7-Gw5H5l0HIqeOLE8_RgEnc-3294AgLB7md5UPIakYJO1EUbZpeQrzcBnToeZCEC_jQeX2cXU/pubhtml"
             >Data</a
@@ -51,10 +109,31 @@
         <h2>How You Can Contribute</h2>
         <p>
           You can contribute to a better understanding of roadkill in Boston's
-          urban setting by taking a clear photo and submitting it below.
+          urban setting by taking a clear photo with your smartphone and
+          submitting it below, along with the species identification.
+        </p>
+        <form class="roadkill-form">
+          <div>
+            <label for="species"
+              >Species (enter "unidentifiable" if you cannot tell):</label
+            >
+            <input type="text" id="species" name="species" />
+          </div>
+
+          <div>
+            <label for="photo">Upload photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" />
+          </div>
+
+          <input type="submit" class="submit" value="Submit (Disabled)" />
+        </form>
+
+        <p>
+          We also need experts to verify species identifications. Please contact
+          our team to discuss further.
         </p>
       </div>
     </article>
-    <footer>Bleep bloop</footer>
+    <footer>CC BY-NC-ND 4.0</footer>
   </body>
 </html>
