@@ -66,6 +66,22 @@ async function addMarkersToMap(map, roadkillData) {
       }
     }
   });
+  var legend = L.control({ position: "bottomleft" });
+
+  legend.onAdd = function (map) {
+    var div = L.DomUtil.create("div", "legend");
+    div.innerHTML += "<h4>Legend</h4>";
+    div.innerHTML +=
+      '<i style="background: yellow; border-color: red; border-style: solid; border-width: 1px"></i><span>Squirrel</span><br>';
+    div.innerHTML += '<i style="background: green"></i><span>Rabbit</span><br>';
+    div.innerHTML += '<i style="background: black"></i><span>Rat</span><br>';
+    div.innerHTML += '<i style="background: blue"></i><span>Mouse</span><br>';
+    div.innerHTML +=
+      '<i style="background: red"></i><span>Unidentifiable</span><br>';
+    return div;
+  };
+
+  legend.addTo(map);
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
